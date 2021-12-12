@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { useState } from 'react'
 
 function App() {
+  //declare input state
+  const [input, setInput] = useState('')
+  const handleChange = (e) => {
+    //get value from the input box
+    setInput(e.target.value)
+    //parse input
+    //analyze the input in real time
+    //update the state of various metrics in real time
+    //if user pauses for more than 3 seconds, improve result with better model
+    console.log(input)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form onChange={handleChange}>
+        <input
+          type='text'
+          className='textInput'
+          name='inpt'
+          placeholder='type here'
+        />
+      </form>
     </div>
-  );
+  )
 }
-
-export default App;
+export default App
